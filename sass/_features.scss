@@ -1,4 +1,44 @@
 .features {
-    background-color: $color-grey-light-2;
+
     grid-column: center-start/center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+    grid-gap: 6rem;
+    
+
+    //to make grid items with diffrent content size(text)
+    // occupy height it need ( by default align items is set to stretch)
+    align-items: start;
+    
+    
+}
+
+.feature {
+    // to centering icon and text insdie the feature block we going to use grid
+    display: grid;
+    grid-template-columns: [logo-start] min-content [logo-end text-start] 1fr [text-end];
+    grid-column-gap: 3.5rem;
+    grid-row-gap: 1.5rem;
+    
+
+    &__icon {
+        fill: $color-primary;
+        height: 4.5rem;
+        width: 4.5rem;
+        
+        // grid-column: logo-start/logo-end;
+        grid-row: 1/span 2;
+
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+        // grid-column: text-start/text-end;
+    }
 }
