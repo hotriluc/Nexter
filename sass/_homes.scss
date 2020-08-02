@@ -1,4 +1,103 @@
 .homes {
-    background-color: $color-secondary;
+    
     grid-column: center-start/center-end;
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+}
+
+.home {
+    background-color: $color-grey-light-1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.5rem;
+    box-shadow: 0 2rem 5rem rgba($color: black, $alpha: .2);
+    
+    &__image {
+        width: 100%;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        z-index: 1;
+    }
+
+    &__like {
+        grid-row: 1/2;
+        grid-column: 2/3;
+        // To be sure that like will be on top of the image
+        z-index: 2;
+        justify-self: end;
+        
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: $color-primary;
+        margin: 1rem;
+
+    }
+
+    // &__like:hover {
+    //     fill: $color-primary-dark;
+    // }
+
+    &__name {
+        grid-column: 1/-1;
+
+        font-family: $font-display;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 1.25rem;
+        background-color: $color-secondary;
+        color: white;
+        font-weight: 400;
+
+        //overlapping above the image
+        width: 80%;
+
+        //1 of the ways to do it. But using it will leave the empty row that we don't need
+        // justify-self: center;
+        // transform: translateY(-2rem);
+        // z-index: 2;
+
+        //2nd way to do it
+        grid-row: 1/2;
+        align-self: end;
+        z-index: 2;
+        justify-self: center;
+        transform: translateY(50%);
+
+
+    }
+
+    &__location,  &__rooms {
+        // To remove visually small gap on top of these items relate to two others
+        margin-top: 2.5rem;
+    }
+
+    &__location,  &__rooms, &__area, &__price {
+        //Displaying image and text in the one direction (row) using flexbox
+        display: flex;
+        align-items: center;
+        
+
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        svg {
+            height: 2rem;
+            width: 2rem;
+            margin-right: 2rem;
+            fill: $color-primary;
+        }
+
+        p {
+
+        }
+
+    }
+
+    &__button {
+        grid-column: 1  / -1;
+    }
+
+   
 }
