@@ -33,12 +33,14 @@
         height: 2.5rem;
         fill: $color-primary;
         margin: 1rem;
+        transition: all .2s;
 
     }
 
-    // &__like:hover {
-    //     fill: $color-primary-dark;
-    // }
+     &__like:hover {
+         fill: $color-primary-dark;
+        
+     }
 
     &__name {
         grid-column: 1/-1;
@@ -62,7 +64,7 @@
         //2nd way to do it
         grid-row: 1/2;
         align-self: end;
-        z-index: 2;
+        z-index: 3;
         justify-self: center;
         transform: translateY(50%);
 
